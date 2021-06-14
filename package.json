@@ -25,12 +25,11 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "tslint",
-      "prettier --write",
-      "git add"
-    ]
-  },
+   "src/**/*.js": [
+      "eslint --fix",  
+      "git add"        
+   ]
+},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
