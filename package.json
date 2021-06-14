@@ -25,9 +25,8 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "prettier-eslint --write"
+    "./src/*.{js,jsx,ts,tsx}": [
+      "eslint src/*.js"
     ]
   },
   "husky": {
