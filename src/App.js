@@ -1,4 +1,4 @@
-const { default: PingPong } = require('Containers/PingPong');
+import PingPong from 'Containers/PingPong';
 
 function App() {
   return (
