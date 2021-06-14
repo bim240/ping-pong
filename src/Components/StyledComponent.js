@@ -21,4 +21,11 @@ export const StyledStep2 = styled.div`
       font-weight: 900;
     }
   }
+  .winner_container {
+    .winner_name,
+    .winner_diff {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+  }
 `;

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { StyledPingPong } from "./StyledComponents";
 
 const PingPong = (porps) => {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
 
   return (
     <StyledPingPong>

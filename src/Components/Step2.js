@@ -14,7 +14,9 @@ const Step2 = (props) => {
       i === index ? item + 1 : item
     );
     setPlayerScore(newState);
-    localStorage.setItem([currentPlayers], newState.join("_"));
+  };
+  const saveData = () => {
+    localStorage.setItem([currentPlayers], playerScore.join("_"));
   };
   return (
     <StyledStep2>
@@ -36,6 +38,24 @@ const Step2 = (props) => {
           </div>
         );
       })}
+      <div className="winner_container">
+        <h3 className="winner_name">
+          {" "}
+          {`Current Winner: ${
+            playerScore[0] > playerScore[1]
+              ? currentPlayerInfo[0]
+              : playerScore[0] == playerScore[1]
+              ? "Its a draw"
+              : currentPlayerInfo[1]
+          }`}
+        </h3>
+        <h3 className="winner_diff">
+          Win Difference {Math.abs(playerScore[0] - playerScore[1])}
+        </h3>
+      </div>
+      <Button onClick={saveData} type="primary">
+        Save Game
+      </Button>
     </StyledStep2>
   );
 };
