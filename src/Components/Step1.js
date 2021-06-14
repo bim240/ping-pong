@@ -19,6 +19,14 @@ const Step1 = (props) => {
     setDisableNext(playerInfo.player1.length && playerInfo.player2.length);
   }, [playerInfo]);
 
+  const getToNextStep = () => {
+    localStorage.setItem(
+      "currentPlayer",
+      `${playerInfo.player1}_${playerInfo.player2}`
+    );
+    setCurrentStep(2);
+  };
+
   return (
     <StyledStep1>
       <Form layout="vertical">
@@ -51,10 +59,7 @@ const Step1 = (props) => {
           />
         </Form.Item>
 
-        <Button
-          disabled={!disableNext}
-          type="primary"
-          onClick={() => setCurrentStep(2)}>
+        <Button disabled={!disableNext} type="primary" onClick={getToNextStep}>
           Continue
         </Button>
       </Form>
