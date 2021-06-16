@@ -1,13 +1,13 @@
-import { Form, Input, Button } from "antd";
-import { useEffect, useState } from "react";
+import { Form, Input, Button } from 'antd';
+import { useEffect, useState } from 'react';
 
-import { StyledStep1 } from "./StyledComponent";
+import { StyledStep1 } from './StyledComponent';
 
 const Step1 = (props) => {
   const { setCurrentStep } = props;
   const [playerInfo, setPlayerInfo] = useState({
-    player1: "",
-    player2: "",
+    player1: '',
+    player2: '',
   });
   const [disableNext, setDisableNext] = useState(false);
 
@@ -21,7 +21,7 @@ const Step1 = (props) => {
 
   const getToNextStep = () => {
     localStorage.setItem(
-      "currentPlayer",
+      'currentPlayer',
       `${playerInfo.player1}_${playerInfo.player2}`
     );
     setCurrentStep(2);
@@ -37,7 +37,8 @@ const Step1 = (props) => {
             {
               required: true,
             },
-          ]}>
+          ]}
+        >
           <Input
             name="player1"
             onChange={updatePlayerInfo}
@@ -51,7 +52,8 @@ const Step1 = (props) => {
             {
               required: true,
             },
-          ]}>
+          ]}
+        >
           <Input
             name="player2"
             onChange={updatePlayerInfo}
@@ -59,7 +61,12 @@ const Step1 = (props) => {
           />
         </Form.Item>
 
-        <Button disabled={!disableNext} type="primary" onClick={getToNextStep}>
+        <Button
+          data-testid="contiue-btn"
+          disabled={!disableNext}
+          type="primary"
+          onClick={getToNextStep}
+        >
           Continue
         </Button>
       </Form>
