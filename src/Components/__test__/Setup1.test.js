@@ -1,6 +1,6 @@
 // __tests__/CheckboxWithLabel-test.js
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import Step1 from '../Step1';
 
 // Note: running cleanup afterEach is done automatically for you in @testing-library/react@9.0.0 or higher
