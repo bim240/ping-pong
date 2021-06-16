@@ -16,7 +16,7 @@ Object.defineProperty(window, 'matchMedia', {
     };
   },
 });
-test('Step1 changes the text after click', () => {
+test('Step1 basic dom testing', () => {
   const { getByTestId, getByLabelText } = render(<Step1 />);
   expect(getByLabelText('Player 1 name')).toBeInTheDocument();
   expect(getByLabelText('Player 2 name')).toBeInTheDocument();
