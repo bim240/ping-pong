@@ -1,9 +1,9 @@
-import Step1 from "Components/Step1";
-import Step2 from "Components/Step2";
-import { useState } from "react";
-import { StyledPingPong } from "./StyledComponents";
+import Step1 from 'Components/Step1';
+import Step2 from 'Components/Step2';
+import { useState } from 'react';
+import { StyledPingPong } from './StyledComponents';
 
-const PingPong = (porps) => {
+const PingPong = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
@@ -13,7 +13,7 @@ const PingPong = (porps) => {
           <Step1 setCurrentStep={setCurrentStep} />,
           <Step2 setCurrentStep={setCurrentStep} />,
         ][currentStep - 1]
-      }{" "}
+      }{' '}
     </StyledPingPong>
   );
 };

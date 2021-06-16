@@ -1,13 +1,13 @@
-import { StyledStep2 } from "./StyledComponent";
-import { Button } from "antd";
-import { useState } from "react";
+import { StyledStep2 } from './StyledComponent';
+import { Button } from 'antd';
+import { useState } from 'react';
 
-const Step2 = (props) => {
-  const currentPlayers = localStorage.getItem("currentPlayer");
+const Step2 = () => {
+  const currentPlayers = localStorage.getItem('currentPlayer');
   const [playerScore, setPlayerScore] = useState(
-    localStorage.getItem([currentPlayers])?.split("_") || [0, 0]
+    localStorage.getItem([currentPlayers])?.split('_') || [0, 0]
   );
-  const currentPlayerInfo = currentPlayers.split("_");
+  const currentPlayerInfo = currentPlayers.split('_');
 
   const setNewScore = (index) => {
     let newState = [...playerScore].map((item, i) =>
@@ -16,7 +16,7 @@ const Step2 = (props) => {
     setPlayerScore(newState);
   };
   const saveData = () => {
-    localStorage.setItem([currentPlayers], playerScore.join("_"));
+    localStorage.setItem([currentPlayers], playerScore.join('_'));
   };
   return (
     <StyledStep2>
@@ -29,8 +29,9 @@ const Step2 = (props) => {
               className="add_wins_btn"
               onClick={() => {
                 setNewScore(index);
-              }}>
-              {" "}
+              }}
+            >
+              {' '}
               Add wins
             </Button>
             <h4 className="wins_text">Wins</h4>
@@ -40,12 +41,12 @@ const Step2 = (props) => {
       })}
       <div className="winner_container">
         <h3 className="winner_name">
-          {" "}
+          {' '}
           {`Current Winner: ${
             playerScore[0] > playerScore[1]
               ? currentPlayerInfo[0]
               : playerScore[0] == playerScore[1]
-              ? "Its a draw"
+              ? 'Its a draw'
               : currentPlayerInfo[1]
           }`}
         </h3>
